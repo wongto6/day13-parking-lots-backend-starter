@@ -1,11 +1,14 @@
 package org.afs.pakinglot.domain;
 
 
+import org.afs.pakinglot.domain.exception.NoAvailablePositionException;
+import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.afs.pakinglot.domain.exception.NoAvailablePositionException;
-import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
 
 public class ParkingLot {
     private int id;
@@ -42,7 +45,7 @@ public class ParkingLot {
             throw new NoAvailablePositionException();
         }
 
-        Ticket ticket = new Ticket(car.plateNumber(), tickets.size() + 1, this.id);
+        Ticket ticket = new Ticket(car.plateNumber(), tickets.size() + 1, this.id, LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS).toString());
         tickets.put(ticket, car);
         return ticket;
     }
@@ -77,6 +80,13 @@ public class ParkingLot {
 
     public List<Ticket> getTickets() {
         return tickets.keySet().stream().toList();
+    }
+
+    public Ticket getTicketByPlateNumber(String plateNumber) {
+        return tickets.keySet().stream()
+                .filter(ticket -> ticket.plateNumber().equals(plateNumber))
+                .findFirst()
+                .orElse(null);
     }
 
 }

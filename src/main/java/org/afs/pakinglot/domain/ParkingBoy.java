@@ -1,11 +1,12 @@
 package org.afs.pakinglot.domain;
 
 
-import java.util.ArrayList;
-import java.util.List;
 import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
 import org.afs.pakinglot.domain.strategies.ParkingStrategy;
 import org.afs.pakinglot.domain.strategies.SequentiallyStrategy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParkingBoy {
     protected List<ParkingLot> parkingLots = new ArrayList<>();
@@ -34,5 +35,13 @@ public class ParkingBoy {
             .findFirst()
             .orElseThrow(UnrecognizedTicketException::new);
         return parkingLotOfTheTicket.fetch(ticket);
+    }
+
+    public Ticket getTicketByPlateNumber(String plateNumber) {
+        return parkingLots.stream()
+                .map(parkingLot -> parkingLot.getTicketByPlateNumber(plateNumber))
+                .filter(ticket -> ticket != null)
+                .findFirst()
+                .orElse(null);
     }
 }
