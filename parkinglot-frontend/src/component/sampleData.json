@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "The Plaza Lot",
+    "tickets": [
+      {
+        "plateNumber": "AB-9999",
+        "position": 2,
+        "parkingLot": 1,
+        "createTime": "2024-12-04T23:44:26"
+      }
+    ],
+    "capacity": 9,
+    "availablePositionRate": 0.8888888888888888,
+    "availableCapacity": 8,
+    "full": false
+  },
+  {
+    "id": 2,
+    "name": "City Mall Garage",
+    "tickets": [
+      {
+        "plateNumber": "AB-4321",
+        "position": 1,
+        "parkingLot": 2,
+        "createTime": "2024-12-04T23:44:35"
+      }
+    ],
+    "capacity": 12,
+    "availablePositionRate": 0.9166666666666666,
+    "availableCapacity": 11,
+    "full": false
+  },
+  {
+    "id": 3,
+    "name": "Office Tower Parking",
+    "tickets": [
+      {
+        "plateNumber": "AB-1821",
+        "position": 1,
+        "parkingLot": 3,
+        "createTime": "2024-12-04T23:44:44"
+      }
+    ],
+    "capacity": 9,
+    "availablePositionRate": 0.8888888888888888,
+    "availableCapacity": 8,
+    "full": false
+  }
+]
