@@ -1,0 +1,44 @@
+/* styles.css */
+.parking-lot-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parking-lot {
+    width: 30%;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
+.tickets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket, .ticket.empty-box {
+    width: 30%;
+    margin: 1%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100px; /* Set a fixed height */
+    font-size: 10px; /* Set a smaller font size */
+}
+
+.create-time {
+    font-size: 6px; /* Set a smaller font size for createTime */
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container select,
+.input-container button {
+    padding: 5px;
+    font-size: 14px;
+}
