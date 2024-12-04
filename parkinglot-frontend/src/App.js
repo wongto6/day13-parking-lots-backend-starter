@@ -2,12 +2,12 @@
 import React from 'react';
 import ParkingLotGroup from './component/ParkingLotGroup';
 import './component/styles.css';
-import AppWrapper from "./component/AppWrapper";
+import UserInputWrapper from "./component/UserInputWrapper";
 
 const App = () => {
     return (
         <div>
-            <AppWrapper />
+            <UserInputWrapper />
             <ParkingLotGroup />
         </div>
     );

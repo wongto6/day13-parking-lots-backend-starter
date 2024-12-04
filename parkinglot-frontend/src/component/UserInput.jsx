@@ -1,7 +1,7 @@
 // InputForm.jsx
 import React, { useState } from 'react';
 
-const InputForm = ({ onPark, onFetch }) => {
+const UserInput = ({ onPark, onFetch }) => {
     const [plateNumber, setPlateNumber] = useState('');
     const [ticketType, setTicketType] = useState('Standard');
 
@@ -35,4 +35,4 @@ const InputForm = ({ onPark, onFetch }) => {
     );
 };
 
-export default InputForm;
+export default UserInput;

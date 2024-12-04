@@ -1,10 +1,10 @@
 // AppWrapper.jsx
 import React from 'react';
-import InputForm from './InputForm';
+import UserInput from './UserInput';
 import ParkingLotGroup from './ParkingLotGroup';
 import './styles.css';
 
-const AppWrapper = () => {
+const UserInputWrapper = () => {
     const handlePark = (plateNumber, ticketType) => {
         // Implement park functionality
         console.log(`Parking ${plateNumber} with ${ticketType} ticket`);
@@ -17,10 +17,10 @@ const AppWrapper = () => {
 
     return (
         <div>
-            <InputForm onPark={handlePark} onFetch={handleFetch} />
+            <UserInput onPark={handlePark} onFetch={handleFetch} />
             <ParkingLotGroup />
         </div>
     );
 };
 
-export default AppWrapper;
+export default UserInputWrapper;
