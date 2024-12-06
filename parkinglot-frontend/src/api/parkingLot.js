@@ -19,3 +19,8 @@ export const getAll = async () => {
     const response = await http.get("/parkinglot/allParkedCars")
     return response.data
 }
+
+export const getBoyTypes = async () => {
+    const response = await http.get("/parkinglot/parkingBoys")
+    return response.data
+}
