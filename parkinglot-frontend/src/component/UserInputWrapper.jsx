@@ -18,7 +18,6 @@ const UserInputWrapper = () => {
     return (
         <div>
             <UserInput onPark={handlePark} onFetch={handleFetch} />
-            <ParkingLotGroup />
         </div>
     );
 };
