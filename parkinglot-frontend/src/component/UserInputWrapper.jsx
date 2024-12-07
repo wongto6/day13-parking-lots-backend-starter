@@ -1,7 +1,6 @@
 // AppWrapper.jsx
 import React from 'react';
 import UserInput from './UserInput';
-import ParkingLotGroup from './ParkingLotGroup';
 import './Parkinglot.css';
 
 const UserInputWrapper = () => {

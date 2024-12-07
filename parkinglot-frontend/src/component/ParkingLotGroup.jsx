@@ -1,7 +1,6 @@
 // ParkingLotGroup.jsx
 import React, {useContext, useEffect} from 'react';
 import ParkingLot from './ParkingLot';
-import sampleData from './sampleData.json';
 import {ParkingLotContext} from "../App";
 import {getAll} from "../api/parkingLot";
 import {ACTION} from "../context/parkingLotReducer";
