@@ -18,7 +18,7 @@
 .ticket, .ticket.empty-box {
     width: 30%;
     margin: 1%;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
@@ -34,6 +34,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .input-container input,
@@ -41,4 +42,8 @@
 .input-container button {
     padding: 5px;
     font-size: 14px;
+}
+
+.title{
+    text-align: center;
 }

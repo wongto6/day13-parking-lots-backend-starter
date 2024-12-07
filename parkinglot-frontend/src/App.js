@@ -13,6 +13,7 @@ const App = () => {
 
     return (
         <ParkingLotContext.Provider value={{state, dispatch}}>
+            <h1 className={"title"}>ParkingLots Management System</h1>
             <UserInputWrapper />
             <ParkingLotGroup />
         </ParkingLotContext.Provider>
