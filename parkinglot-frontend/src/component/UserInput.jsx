@@ -8,7 +8,7 @@ const UserInput = () => {
     const [plateNumber, setPlateNumber] = useState('');
     const [boyType, setBoyType] = useState('Standard');
     const [parkingBoy, setParkingBoy] = useState([])
-    const {state, dispatch} = useContext(ParkingLotContext)
+    const {dispatch} = useContext(ParkingLotContext)
 
     const handlePark = () => {
         park(plateNumber, boyType).then((data) => {
@@ -18,8 +18,9 @@ const UserInput = () => {
 
     const handleFetch = () => {
         fetchCar(plateNumber, boyType).then((data) => {
-            dispatch({type: ACTION.FETCH, payload: data})
-        })
+            dispatch({type: ACTION.FETCH, payload: data});
+            alert(`Car Parked at: ${new Date(data.ticket.createTime).toLocaleString()}\nTotal Fee ($4 for 15 minutes): ${data.totalFee}`);
+        });
     };
 
     useEffect(() => {
