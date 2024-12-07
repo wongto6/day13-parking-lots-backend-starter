@@ -1,22 +1,29 @@
 // InputForm.jsx
-import React, {useEffect, useState} from 'react';
-import {getBoyTypes} from "../api/parkingLot";
+import React, {useContext, useEffect, useState} from 'react';
+import {getBoyTypes, park} from "../api/parkingLot";
+import {ParkingLotContext} from "../App";
+import {ACTION} from "../context/parkingLotReducer";
 
-const UserInput = ({ onPark, onFetch }) => {
+const UserInput = () => {
     const [plateNumber, setPlateNumber] = useState('');
-    const [ticketType, setTicketType] = useState('Standard');
+    const [boyType, setBoyType] = useState('Standard');
     const [parkingBoy, setParkingBoy] = useState([])
+    const {state, dispatch} = useContext(ParkingLotContext)
 
     const handlePark = () => {
-        onPark(plateNumber, ticketType);
+        park(plateNumber, boyType).then((data) => {
+            dispatch({type: ACTION.PARK, payload: data})
+        })
     };
 
     const handleFetch = () => {
-        onFetch(plateNumber);
+        fetch(plateNumber, boyType).then((data) => {
+            dispatch({type: ACTION.PARK, payload: {plateNumber: plateNumber, boyType: boyType}})
+        })
     };
 
     useEffect(() => {
-        getBoyTypes().then((data)=>{
+        getBoyTypes().then((data) => {
             setParkingBoy(data)
         })
     }, []);
@@ -30,8 +37,8 @@ const UserInput = ({ onPark, onFetch }) => {
                 onChange={(e) => setPlateNumber(e.target.value)}
             />
             <select
-                value={ticketType}
-                onChange={(e) => setTicketType(e.target.value)}
+                value={boyType}
+                onChange={(e) => setBoyType(e.target.value)}
             >
                 {parkingBoy.map((boy, index) => (
                     <option key={index} value={boy}>{boy}</option>
