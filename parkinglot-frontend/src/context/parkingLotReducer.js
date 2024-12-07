@@ -24,7 +24,20 @@ export const parkingLotReducer = (state, action) => {
             });
         }
         case ACTION.FETCH: {
-            return state.filter(item => item.id !== action.payload)
+            const ticketToRemove = action.payload.ticket;
+            return state.map(parkingLot => {
+                if (parkingLot.id === ticketToRemove.parkingLot) {
+                    const updatedTickets = parkingLot.tickets.filter(ticket => ticket.plateNumber !== ticketToRemove.plateNumber);
+                    return {
+                        ...parkingLot,
+                        tickets: updatedTickets,
+                        availableCapacity: parkingLot.availableCapacity + 1,
+                        full: false,
+                        availablePositionRate: (parkingLot.availableCapacity + 1) / parkingLot.capacity
+                    };
+                }
+                return parkingLot;
+            });
         }
         case ACTION.LOAD: {
             return action.payload

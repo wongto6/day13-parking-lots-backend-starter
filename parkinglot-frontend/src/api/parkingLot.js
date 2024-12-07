@@ -10,7 +10,7 @@ export const park = async (plateNumber, boyType) => {
     return response.data
 }
 
-export const fetch = async (plateNumber, boyType) => {
+export const fetchCar = async (plateNumber, boyType) => {
     const response = await http.post("/parkinglot/fetch", {plateNumber: plateNumber, boyType: boyType})
     return response.data
 }

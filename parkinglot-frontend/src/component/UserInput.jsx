@@ -1,6 +1,6 @@
 // InputForm.jsx
 import React, {useContext, useEffect, useState} from 'react';
-import {getBoyTypes, park} from "../api/parkingLot";
+import {fetchCar, getBoyTypes, park} from "../api/parkingLot";
 import {ParkingLotContext} from "../App";
 import {ACTION} from "../context/parkingLotReducer";
 
@@ -17,8 +17,8 @@ const UserInput = () => {
     };
 
     const handleFetch = () => {
-        fetch(plateNumber, boyType).then((data) => {
-            dispatch({type: ACTION.PARK, payload: {plateNumber: plateNumber, boyType: boyType}})
+        fetchCar(plateNumber, boyType).then((data) => {
+            dispatch({type: ACTION.FETCH, payload: data})
         })
     };
 
