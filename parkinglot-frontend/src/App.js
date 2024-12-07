@@ -1,7 +1,7 @@
 // App.js
 import React, {createContext, useReducer} from 'react';
 import ParkingLotGroup from './component/ParkingLotGroup';
-import './component/styles.css';
+import './component/Parkinglot.css';
 import UserInputWrapper from "./component/UserInputWrapper";
 import {parkingLotReducer} from "./context/parkingLotReducer";
 

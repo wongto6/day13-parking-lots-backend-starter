@@ -2,7 +2,7 @@
 import React from 'react';
 import UserInput from './UserInput';
 import ParkingLotGroup from './ParkingLotGroup';
-import './styles.css';
+import './Parkinglot.css';
 
 const UserInputWrapper = () => {
     const handlePark = (plateNumber, ticketType) => {

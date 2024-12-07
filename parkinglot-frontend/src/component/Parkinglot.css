@@ -16,14 +16,30 @@
 }
 
 .ticket, .ticket.empty-box {
-    width: 30%;
-    margin: 1%;
-    border: 1px solid black;
+    background-color: white; /* Set background color to white */
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
     height: 100px; /* Set a fixed height */
+    width:60px;
     font-size: 10px; /* Set a smaller font size */
+    border: 1px solid black; /* Set default border color to black */
+}
+
+.ticket:nth-child(3n+1) {
+    border-left: none; /* Remove left border for the first column */
+}
+
+.ticket:nth-child(3n) {
+    border-right: none; /* Remove right border for the last column */
+}
+
+.ticket:nth-child(-n+3) {
+    border-top: none; /* Remove top border for the first row */
+}
+
+.ticket:nth-last-child(-n+3) {
+    border-bottom: none; /* Remove bottom border for the last row */
 }
 
 .create-time {
