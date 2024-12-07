@@ -19,7 +19,7 @@ const UserInput = () => {
     const handleFetch = () => {
         fetchCar(plateNumber, boyType).then((data) => {
             dispatch({type: ACTION.FETCH, payload: data});
-            alert(`Car Parked at: ${new Date(data.ticket.createTime).toLocaleString()}\nTotal Fee ($4 for 15 minutes): ${data.totalFee}`);
+            alert(`Car Parked at: ${new Date(data.ticket.createTime).toLocaleString()}\nTotal Fee ($4 for 15 minutes): $${data.totalFee}`);
         });
     };
 

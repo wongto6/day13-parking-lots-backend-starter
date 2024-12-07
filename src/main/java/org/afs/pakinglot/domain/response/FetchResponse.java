@@ -34,11 +34,7 @@ public class FetchResponse {
 
         Long parkedSeconds = duration.toSeconds();
 
-        if (parkedSeconds <= FEE_UNIT) {
-            this.totalFee = PARKING_FEE;
-        } else {
-            this.totalFee = (parkedSeconds / FEE_UNIT) * PARKING_FEE + (parkedSeconds % FEE_UNIT) * PARKING_FEE;
-        }
+        this.totalFee = Math.ceil(parkedSeconds / (double) FEE_UNIT) * PARKING_FEE;
 
     }
 
